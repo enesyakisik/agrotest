@@ -1,0 +1,13 @@
+{
+  "name": "agrotest",
+  "version": "1.0.0",
+  "description": "Geo-aware agronomy web experience",
+  "scripts": {
+    "lint": "eslint src --ext .js",
+    "build": "rm -rf dist && mkdir -p dist/assets && cp src/index.html dist/ && cp -r src/assets dist/",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
