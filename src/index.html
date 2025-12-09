@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroLink | Küresel Akıllı Tarım Platformu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">AgroLink</div>
+    <nav class="nav">
+      <a href="#vision">Vizyon</a>
+      <a href="#insights">Saha İçgörüsü</a>
+      <a href="#products">Ürünler</a>
+      <a href="#regions">Geo Bölge</a>
+      <a href="#contact" class="pill">Demo Al</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Kubernetes-native · GitLab CI/CD · Zero-downtime</p>
+        <h1>Küresel ölçekte hassas tarımı orkestre edin.</h1>
+        <p class="lede">AgroLink; ABD ve Avrupa kümelerinde edge-ingress ile düşük gecikmeli veri toplar, agronomi ekibiniz için uçtan uca öngörü, kalite ve güvenlik otomasyonu sunar.</p>
+        <div class="cta-row">
+          <button class="btn primary" data-action="open-form">Hızlı canlı demo</button>
+          <button class="btn ghost" data-action="open-wizard">Deploy sihirbazı</button>
+        </div>
+        <div class="hero__stats">
+          <div>
+            <div class="stat">-42%</div>
+            <p class="stat-label">Su tüketiminde azalma</p>
+          </div>
+          <div>
+            <div class="stat">+27%</div>
+            <p class="stat-label">Verimde iyileşme</p>
+          </div>
+          <div>
+            <div class="stat">98.9%</div>
+            <p class="stat-label">Kümeler arası SLA</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero__panel" aria-live="polite">
+        <div class="panel__header">
+          <span class="pill pill--success">Canlı</span>
+          <span>Cluster durumu</span>
+          <span class="muted">prod-us-central</span>
+        </div>
+        <div class="panel__body">
+          <div class="metric">
+            <div>
+              <p class="muted">Ingress latency</p>
+              <p class="metric__value" id="latency-value">42 ms</p>
+            </div>
+            <div class="metric__trend positive">▼ 6%</div>
+          </div>
+          <div class="metric">
+            <div>
+              <p class="muted">API yanıt süresi</p>
+              <p class="metric__value" id="response-value">112 ms</p>
+            </div>
+            <div class="metric__trend neutral">–</div>
+          </div>
+          <div class="metric">
+            <div>
+              <p class="muted">Bölgesel yönlendirme</p>
+              <p class="metric__value" id="region-value">ABD · Avrupa</p>
+            </div>
+            <div class="metric__trend positive">Aktif</div>
+          </div>
+          <div class="timeline" id="uptime-timeline" aria-label="Durum kronolojisi">
+            <span class="tick success"></span>
+            <span class="tick success"></span>
+            <span class="tick success"></span>
+            <span class="tick warning"></span>
+            <span class="tick success"></span>
+            <span class="tick success"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision" class="section cards">
+      <div class="section__title">
+        <p class="eyebrow">Deneyim tasarımı</p>
+        <h2>UI/UX odaklı, saha ekiplerine yönelik akışlar.</h2>
+        <p class="muted">Girdilerden analize, saha kararlarından uydu görüntüsüne kadar tüm akışları tek panelde sunuyoruz.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <h3>Saha günü planlama</h3>
+          <p>Akıllı rotalama, stok takibi ve görev atama; mobil çevrimdışı mod destekli.</p>
+        </article>
+        <article class="card">
+          <h3>Telemetri kanvası</h3>
+          <p>İkili karelaj sistemiyle sensör verilerini harita üstünde ısı dağılımı olarak izleyin.</p>
+        </article>
+        <article class="card">
+          <h3>Deneme protokolleri</h3>
+          <p>Varyantlar, kontrollü parseller ve saha notlarını tek tıkla rapora dönüştürün.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="insights" class="section section--surface">
+      <div class="section__title">
+        <p class="eyebrow">Gerçek zamanlı içgörü</p>
+        <h2>Edge AI ile iklim, toprak ve enerji tüketimini aynı ekranda görün.</h2>
+      </div>
+      <div class="layout">
+        <div class="insight-list" aria-live="polite">
+          <div class="insight">
+            <div>
+              <p class="muted">Kümülatif yağış</p>
+              <h3>47 mm</h3>
+            </div>
+            <span class="tag">AI öneri</span>
+            <p class="insight__note">Sulama 12 saat ötelenebilir, toprak nemi %74.</p>
+          </div>
+          <div class="insight">
+            <div>
+              <p class="muted">Enerji tüketimi</p>
+              <h3>1.9 MWh</h3>
+            </div>
+            <span class="tag tag--warning">Alarm</span>
+            <p class="insight__note">Soğutma yükü artıyor, fan kademesi otomatik yükseltildi.</p>
+          </div>
+          <div class="insight">
+            <div>
+              <p class="muted">Toprak elektriksel iletkenlik</p>
+              <h3>0.18 mS/cm</h3>
+            </div>
+            <span class="tag">Sağlıklı</span>
+            <p class="insight__note">Gübre dozu dengeli, sensör kalibrasyonu güncel.</p>
+          </div>
+        </div>
+        <div class="panel panel--glass">
+          <div class="panel__header">UX akış kataloğu</div>
+          <ul class="steps" id="ux-steps">
+            <li class="steps__item active">1. Tarlayı seç</li>
+            <li class="steps__item">2. Drone uçuşunu planla</li>
+            <li class="steps__item">3. Saha görevi ata</li>
+            <li class="steps__item">4. Veri senkronizasyonu</li>
+            <li class="steps__item">5. Onay ve rapor</li>
+          </ul>
+          <div class="panel__footer">
+            <button class="btn text" data-action="next-step">Adım ilerlet</button>
+            <button class="btn ghost" data-action="reset-step">Sıfırla</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="section__title">
+        <p class="eyebrow">Ürün ailesi</p>
+        <h2>Tekil modüller değil, orkestrasyon.</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card card--feature">
+          <header>
+            <p class="muted">Ops & Reliability</p>
+            <h3>GitLab CI/CD + Kubernetes</h3>
+          </header>
+          <ul class="list">
+            <li>Pipeline aşamaları: lint, güvenlik, build, deploy.</li>
+            <li>Container image taraması ve imza doğrulama.</li>
+            <li>Blue/green ve canary trafik bölme.</li>
+          </ul>
+        </article>
+        <article class="card card--feature">
+          <header>
+            <p class="muted">Veri & Model</p>
+            <h3>Edge AI & uydu füzyonu</h3>
+          </header>
+          <ul class="list">
+            <li>On-device inferans ve gecikme uyarlamalı çekirdek.</li>
+            <li>Versiyonlanmış özellik mağazası, MLOps kapsayıcı.</li>
+            <li>Model drift takibi ve otomatik rollback.</li>
+          </ul>
+        </article>
+        <article class="card card--feature">
+          <header>
+            <p class="muted">Güvenlik</p>
+            <h3>Zero-trust mesh</h3>
+          </header>
+          <ul class="list">
+            <li>mTLS servis keşfi, istek başına policy.</li>
+            <li>Doğrulanmış git commit ve imzalı artefakt.</li>
+            <li>Runtime imza doğrulama, eBPF tabanlı görünürlük.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="regions" class="section section--surface">
+      <div class="section__title">
+        <p class="eyebrow">Geo region</p>
+        <h2>ABD ve Avrupa kümelerinde düşük gecikmeli teslimat.</h2>
+        <p class="muted">Ingress katmanında coğrafi ağırlıklı yönlendirme, veri yerelliği ve felaket kurtarma planları hazır.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3>ABD bölgesi</h3>
+          <p>us-central ve us-east cluster’ları; edge cache ve CDN uçları ile 20 ms altı hedef.</p>
+          <div class="pill pill--info">Aktif</div>
+          <div class="chart" id="chart-us" role="img" aria-label="ABD isteği dağılımı grafiği"></div>
+        </div>
+        <div class="card">
+          <h3>Avrupa bölgesi</h3>
+          <p>eu-west çoklu zona; ingress rate-limit ve WAF profilleri varsayılan.</p>
+          <div class="pill">Pilot</div>
+          <div class="chart" id="chart-eu" role="img" aria-label="Avrupa isteği dağılımı grafiği"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--form">
+      <div class="form-shell">
+        <h2>Demo planlayalım</h2>
+        <p class="muted">GitLab pipeline’ınız, container registry ve Kubernetes erişiminizle 30 dakikada prod senaryosu kuralım.</p>
+        <form class="form" id="demo-form">
+          <div class="form__row">
+            <label for="name">Ad Soyad</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="form__row">
+            <label for="region">Öncelikli bölge</label>
+            <select id="region" name="region" required>
+              <option value="us">ABD</option>
+              <option value="eu">Avrupa</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label for="email">E-posta</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="form__row">
+            <label for="notes">Notlar</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="İstenen modüller, güvenlik kısıtları..."></textarea>
+          </div>
+          <div class="form__actions">
+            <button class="btn primary" type="submit">Demo iste</button>
+            <button class="btn ghost" type="reset">Temizle</button>
+          </div>
+          <p class="muted" id="form-feedback" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>AgroLink</strong>
+      <p class="muted">GitLab CI/CD · Kubernetes · Geo-ingress · Güvenlik</p>
+    </div>
+    <div class="footer__links">
+      <a href="#">Gizlilik</a>
+      <a href="#">İletişim</a>
+      <a href="#">Durum</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="wizard-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3>Deploy sihirbazı</h3>
+        <button class="btn icon" data-action="close-modal" aria-label="Kapat">×</button>
+      </div>
+      <div class="modal__body">
+        <ol class="wizard">
+          <li>GitLab CI token ve container registry erişimini ekleyin.</li>
+          <li>ABD ve Avrupa kubeconfig dosyalarını pipeline değişkeni olarak tanımlayın.</li>
+          <li>Ingress için geo region anotasyonları (topology.kubernetes.io/region) ekleyin.</li>
+          <li>Canary ağırlıklarını %10 → %50 → %100 olarak ilerletin.</li>
+        </ol>
+      </div>
+      <div class="modal__footer">
+        <button class="btn primary" data-action="close-modal">Anladım</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/app.js" type="module"></script>
+</body>
+</html>
