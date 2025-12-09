@@ -1,0 +1,55 @@
+stages:
+  - lint
+  - build
+  - docker-build
+  - security
+
+image: node:20-alpine
+
+variables:
+  NODE_ENV: production
+  DOCKER_TLS_CERTDIR: "/certs"
+  KUBE_CONTEXT: "us"
+  APP_IMAGE: "$CI_REGISTRY_IMAGE:$CI_APPLICATION_TAG"
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  # npm ci requires a lockfile; fall back to npm install for fresh clones
+  - if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+lint:
+  stage: lint
+  script:
+    - npm run lint
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 week
+
+.docker_template:
+  stage: docker-build
+  image: docker:24.0.5
+  services:
+    - docker:24.0.5-dind
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+  script:
+    - docker build -t "$APP_IMAGE" .
+    - docker push "$APP_IMAGE"
+
+docker-build:
+  extends: .docker_template
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
