@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: agrolink-eu
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/geo-country-code: "EU"
+    topology.kubernetes.io/region: "eu"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: eu.agrolink.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: agrolink-web
+                port:
+                  number: 80
